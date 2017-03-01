@@ -1,0 +1,14 @@
+<% include _header %>
+  <a href="/new">Make a new Post</a>
+  <% posts.forEach(function (post) { %>
+    <div class="ejs-blog-post">
+      <h1><%= post.title %></h1>
+      <h2><%= post.author %></h2>
+      <h3><%= post.createdAt %></h3>
+      <div><%= post.body %></div>
+    </div>
+  <% }) %>
+  <% if (posts !== undefined) { %>
+    <script>var post = <%= posts %> </script>
+  <% } %>
+<% include _footer %>

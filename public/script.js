@@ -9,13 +9,23 @@ if (window.PB === undefined) {
   var test = document.querySelector("#test");
   var buttons = document.querySelector("#buttons");
 
+  function specifyElementAndCreate(tag) {
+    var element = new PB.PostElement();
+    element.create(tag, test);
+  }
+
   buttons.addEventListener("click", function (evt) {
-    if (evt.target.innerText === "Submit") {
+    var target = evt.target.innerText;
+
+    if (target === "Submit") {
       var post = new PB.Post();
       post.sendPostData();
-    } else {
-      var element = new PB.PostElement();
-      element.create("h1", test);
+    } else if (target === "Add Title") {
+      specifyElementAndCreate("h1");
+    } else if (target === "Add Header") {
+      specifyElementAndCreate("h2");
+    } else if (target === "Add Paragraph") {
+      specifyElementAndCreate("p");
     }
   });
 

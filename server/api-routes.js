@@ -10,14 +10,15 @@ module.exports = function () {
     res.render("new");
   });
 
-  router.post("/new", function (req, res) {
+  router.post("/api/blog/new", function (req, res) {
 
     var cb = (err, data) => {
+      console.log(data);
       res.redirect('/blog');
     };
 
     var post = new Post ();
-    console.log(req.user)
+
     post.title = req.body.title,
     post.author = req.user.username,
     post.body = req.body.body,

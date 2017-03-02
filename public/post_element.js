@@ -13,11 +13,17 @@ if (window.PB === undefined) {
   var newPostData = { title: "", body: [] };
 
   var setPostData = function setPostData(domElement, contents) {
-    console.log(domElement);
+
     if (domElement === "h1") {
       newPostData.title = contents;
     } else {
-      newPostData.body.push(contents);
+
+      var section = {
+        content: contents,
+        tag: domElement
+      };
+
+      newPostData.body.push(section);
     }
   };
 
@@ -37,7 +43,6 @@ if (window.PB === undefined) {
       key: "addElement",
       value: function addElement(element, content) {
         setPostData(element, content);
-        console.log(newPostData);
       }
     }]);
 
@@ -53,7 +58,17 @@ if (window.PB === undefined) {
       key: "sendPostData",
       value: function sendPostData() {
         var post = newPostData;
-        console.log("data sent!", post);
+
+        $.ajax({
+          url: "/api/blog/new",
+          method: "POST",
+          data: {
+            title: post.title,
+            body: JSON.stringify(post.body)
+          }
+        }).done(function (data) {
+          console.log(data);
+        });
       }
     }]);
 

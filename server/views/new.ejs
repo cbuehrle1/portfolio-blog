@@ -1,10 +1,16 @@
 <% include _header %>
-    <form class="ejs-form" action="/new" method="post">
-      <input name="title" type="text" placeholder="Title" required autofocus />
-      <textarea name="body" type="text"></textarea>
-      <input class="input-button" type="submit" value="Post"/>
-    </form>
+  <h1>New Blog Post</h1>
+  <div id="buttons">
+    <button>Add Title</button>
+    <button>Add Header</button>
+    <button>Add Paragraph</button>
+    <button>Submit</button>
   </div>
+  <div id="test"></div>
+  </div>
+  <script src="post_element.js"></script>
+  <script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react-dom.js"></script>
 <% include _footer %>

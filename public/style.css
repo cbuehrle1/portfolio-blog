@@ -46,6 +46,34 @@ table {
   border-spacing: 0; }
 
 body {
-  background-color: rgba(0, 0, 0, 0.1); }
+  background-color: rgba(0, 0, 0, 0.1);
+  font-family: 'Signika', sans-serif; }
+
+.ejs-blog-post {
+  width: 680px;
+  background-color: #FFF;
+  margin: 20px auto;
+  padding: 3% 5%; }
+  .ejs-blog-post h1 {
+    font-size: 36px; }
+  .ejs-blog-post h2 {
+    font-size: 16px;
+    margin-bottom: 5%; }
+  .ejs-blog-post p {
+    font-size: 20px;
+    margin-bottom: 3%; }
+
+#test {
+  width: 680px;
+  background-color: #FFF;
+  margin: 50px auto;
+  padding: 3% 5%; }
+  #test h1 {
+    font-size: 36px; }
+  #test h2 {
+    font-size: 16px;
+    margin-bottom: 5%; }
+  #test p {
+    font-size: 20px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -4,6 +4,7 @@ if (window.PB === undefined) { window.PB = {}; }
 
   var test = document.querySelector("#test");
   var buttons = document.querySelector("#buttons");
+  console.log(Date.now())
 
   function specifyElementAndCreate (tag) {
     var element = new PB.PostElement();

@@ -71,18 +71,18 @@ app.get("/blog", ensureAuthenticated, function(req, res) {
       }
 
       data.forEach((post) => {
-        console.log(post.body);
+
         var item = {
           title: post.title,
+          id: post._id,
           author: post.author,
           date: post.createdAt,
-          body: post.body,
+          body: JSON.parse(post.body),
           comments: post.comments
         }
 
         posts.push(item);
       });
-
       res.render('blog', { posts: posts });
     });
 });

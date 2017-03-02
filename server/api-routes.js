@@ -13,8 +13,7 @@ module.exports = function () {
   router.post("/api/blog/new", function (req, res) {
 
     var cb = (err, data) => {
-      console.log(data);
-      res.redirect('/blog');
+      res.send(data);
     };
 
     var post = new Post ();

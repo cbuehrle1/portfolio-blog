@@ -49,7 +49,7 @@ if (window.PB === undefined) { window.PB = {}; }
           }
         })
         .done(function(data) {
-          console.log(data);
+          window.location = "/blog"
         });
 
       }

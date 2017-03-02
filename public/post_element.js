@@ -67,7 +67,7 @@ if (window.PB === undefined) {
             body: JSON.stringify(post.body)
           }
         }).done(function (data) {
-          console.log(data);
+          window.location = "/blog";
         });
       }
     }]);

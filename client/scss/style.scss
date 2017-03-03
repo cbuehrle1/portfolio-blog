@@ -9,6 +9,7 @@ body{
   background-color: #FFF;
   margin: 20px auto;
   padding: 3% 5%;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
   h1{
     font-size: 36px;
   }
@@ -20,12 +21,17 @@ body{
     font-size: 20px;
     margin-bottom: 3%;
   }
+  img{
+    width: 50%;
+    height: 50%;
+  }
 }
 #test{
   width: 680px;
   background-color: #FFF;
   margin: 50px auto;
   padding: 3% 5%;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
   h1{
     font-size: 36px;
   }
@@ -35,5 +41,9 @@ body{
   }
   p{
     font-size: 20px;
+  }
+  img{
+    width: 50%;
+    height: 50%;
   }
 }

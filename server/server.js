@@ -87,6 +87,10 @@ app.get("/blog", ensureAuthenticated, function(req, res) {
     });
 });
 
+app.get("/new", ensureAuthenticated, function (req, res) {
+  res.render("new");
+});
+
 app.post("/login", passport.authenticate("login", {
   successRedirect: "/blog",
   failureRedirect: "/login"

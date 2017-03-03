@@ -53,7 +53,8 @@ body {
   width: 680px;
   background-color: #FFF;
   margin: 20px auto;
-  padding: 3% 5%; }
+  padding: 3% 5%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2); }
   .ejs-blog-post h1 {
     font-size: 36px; }
   .ejs-blog-post h2 {
@@ -62,12 +63,16 @@ body {
   .ejs-blog-post p {
     font-size: 20px;
     margin-bottom: 3%; }
+  .ejs-blog-post img {
+    width: 50%;
+    height: 50%; }
 
 #test {
   width: 680px;
   background-color: #FFF;
   margin: 50px auto;
-  padding: 3% 5%; }
+  padding: 3% 5%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2); }
   #test h1 {
     font-size: 36px; }
   #test h2 {
@@ -75,5 +80,8 @@ body {
     margin-bottom: 5%; }
   #test p {
     font-size: 20px; }
+  #test img {
+    width: 50%;
+    height: 50%; }
 
 /*# sourceMappingURL=style.css.map */

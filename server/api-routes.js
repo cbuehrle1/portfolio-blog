@@ -6,10 +6,6 @@ module.exports = function () {
 
   var router = express.Router();
 
-  router.get("/new", function (req, res) {
-    res.render("new");
-  });
-
   router.post("/api/blog/new", function (req, res) {
 
     var cb = (err, data) => {

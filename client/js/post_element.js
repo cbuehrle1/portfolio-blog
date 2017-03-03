@@ -2,6 +2,8 @@ if (window.PB === undefined) { window.PB = {}; }
 
 (() => {
 
+  var cb = []
+
   var newPostData = { title: "", body: [] };
 
   var setPostData = function (domElement, contents) {
@@ -31,6 +33,27 @@ if (window.PB === undefined) { window.PB = {}; }
 
       addElement(element, content) {
         setPostData(element, content);
+      }
+
+      addSourceInput(destination) {
+        var inputContainer = document.createElement("div");
+        var input = document.createElement("input");
+        var enter = document.createElement("button");
+        input.setAttribute("name", "source");
+        input.setAttribute("placeholder", "Enter Image Source");
+        enter.textContent = "Enter";
+        inputContainer.className = "src-input";
+
+        destination.appendChild(inputContainer);
+        inputContainer.appendChild(input);
+        inputContainer.appendChild(enter);
+      }
+
+      addImage(contents, destination, remove) {
+        var img = document.createElement("img");
+        img.src = contents;
+        remove.innerHTML = "";
+        destination.appendChild(img);
       }
 
     }

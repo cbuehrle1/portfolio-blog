@@ -15,9 +15,9 @@ module.exports = function() {
       done(err, user);
     });
   });
-
+  
   passport.use("login", new LocalStrategy({
-    
+
     username: 'username',
     password: 'password',
     passReqToCallback : true

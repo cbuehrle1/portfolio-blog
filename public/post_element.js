@@ -10,6 +10,8 @@ if (window.PB === undefined) {
 
 (function () {
 
+  var cb = [];
+
   var newPostData = { title: "", body: [] };
 
   var setPostData = function setPostData(domElement, contents) {
@@ -43,6 +45,29 @@ if (window.PB === undefined) {
       key: "addElement",
       value: function addElement(element, content) {
         setPostData(element, content);
+      }
+    }, {
+      key: "addSourceInput",
+      value: function addSourceInput(destination) {
+        var inputContainer = document.createElement("div");
+        var input = document.createElement("input");
+        var enter = document.createElement("button");
+        input.setAttribute("name", "source");
+        input.setAttribute("placeholder", "Enter Image Source");
+        enter.textContent = "Enter";
+        inputContainer.className = "src-input";
+
+        destination.appendChild(inputContainer);
+        inputContainer.appendChild(input);
+        inputContainer.appendChild(enter);
+      }
+    }, {
+      key: "addImage",
+      value: function addImage(contents, destination, remove) {
+        var img = document.createElement("img");
+        img.src = contents;
+        remove.innerHTML = "";
+        destination.appendChild(img);
       }
     }]);
 

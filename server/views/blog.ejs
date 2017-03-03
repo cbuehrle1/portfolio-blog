@@ -9,12 +9,13 @@
             <h1><%= item.content %></h1>
           <% } else if (item.tag === "p") { %>
             <p><%= item.content %></p>
-        <% }}) %>
+        <% } else if (item.tag === "img") { %>
+            <img src=<%= item.content %> />
+      <% }}) %>
         </div>
       </div>
     <% }) %>
   </div>
-  <script id="dsq-count-scr" src="//chadbuehrle.disqus.com/count.js" async></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react-dom.js"></script>
 <% include _footer %>

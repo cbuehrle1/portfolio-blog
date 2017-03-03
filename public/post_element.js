@@ -68,6 +68,7 @@ if (window.PB === undefined) {
         img.src = contents;
         remove.innerHTML = "";
         destination.appendChild(img);
+        setPostData("img", contents);
       }
     }]);
 

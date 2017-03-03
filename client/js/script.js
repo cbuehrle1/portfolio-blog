@@ -52,26 +52,16 @@ if (window.PB === undefined) { window.PB = {}; }
   test.addEventListener("click", function(evt) {
 
     if (test.children.length > 0 && evt.target.localName === "button") {
-      console.log(test.children);
 
       for (var i = 0; i < test.children.length; i++) {
-        console.log("in loop");
         var elem = test.children[i];
 
         if (elem.className === "src-input") {
-          console.log("found src-input");
           var input = elem.children[0];
           var button = elem.children[1];
           triggerImage(input.value, test, elem);
         }
       }
-      // test.children.forEach((child) => {
-      //   console.log("in loop");
-      //   if (child.className === "src-input") {
-      //     console.log("found src-input");
-      //     var input = child.children[0];
-      //     triggerImage(input.innerText, test, child);
-      //   }
 
       }
   });

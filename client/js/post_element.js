@@ -54,6 +54,7 @@ if (window.PB === undefined) { window.PB = {}; }
         img.src = contents;
         remove.innerHTML = "";
         destination.appendChild(img);
+        setPostData("img", contents);
       }
 
     }

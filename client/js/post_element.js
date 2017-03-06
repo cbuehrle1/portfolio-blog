@@ -35,14 +35,15 @@ if (window.PB === undefined) { window.PB = {}; }
         setPostData(element, content);
       }
 
-      addSourceInput(destination) {
+      addSourceInput(destination, tag) {
         var inputContainer = document.createElement("div");
         var input = document.createElement("input");
         var enter = document.createElement("button");
         input.setAttribute("name", "source");
-        input.setAttribute("placeholder", "Enter Image Source");
+        input.setAttribute("placeholder", "Enter Media Source");
         enter.textContent = "Enter";
         inputContainer.className = "src-input";
+        input.className = tag;
 
         destination.appendChild(inputContainer);
         inputContainer.appendChild(input);
@@ -52,9 +53,18 @@ if (window.PB === undefined) { window.PB = {}; }
       addImage(contents, destination, remove) {
         var img = document.createElement("img");
         img.src = contents;
-        remove.innerHTML = "";
+        remove.remove();
         destination.appendChild(img);
         setPostData("img", contents);
+      }
+
+      addVideo(contents, destination, remove) {
+        console.log("iframe")
+        var video = document.createElement("iframe");
+        video.src = contents;
+        remove.remove();
+        destination.appendChild(video);
+        setPostData("iframe", contents);
       }
 
     }

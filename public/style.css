@@ -66,6 +66,9 @@ body {
   .ejs-blog-post img {
     width: 50%;
     height: 50%; }
+  .ejs-blog-post iframe {
+    width: 100%;
+    height: 360px; }
 
 #test {
   width: 680px;

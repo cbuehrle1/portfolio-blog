@@ -13,7 +13,10 @@ if (window.PB === undefined) {
     var element = new PB.PostElement();
 
     if (tag === "img") {
-      element.addSourceInput(test);
+      element.addSourceInput(test, "add-img");
+    } else if (tag === "iframe") {
+      console.log("specify and create");
+      element.addSourceInput(test, 'add-iframe');
     } else {
       element.create(tag, test);
     }
@@ -22,6 +25,12 @@ if (window.PB === undefined) {
   function triggerImage(target, test, elem) {
     var element = new PB.PostElement();
     element.addImage(target, test, elem);
+  }
+
+  function triggerVideo(target, test, elem) {
+    console.log("triggered Video");
+    var element = new PB.PostElement();
+    element.addVideo(target, test, elem);
   }
 
   buttons.addEventListener("click", function (evt) {
@@ -38,6 +47,8 @@ if (window.PB === undefined) {
       specifyElementAndCreate("p");
     } else if (target === "Add Image") {
       specifyElementAndCreate("img");
+    } else if (target === "Add Video") {
+      specifyElementAndCreate("iframe");
     }
   });
 
@@ -57,7 +68,12 @@ if (window.PB === undefined) {
         if (elem.className === "src-input") {
           var input = elem.children[0];
           var button = elem.children[1];
-          triggerImage(input.value, test, elem);
+
+          if (input.className === "add-img") {
+            triggerImage(input.value, test, elem);
+          } else if (input.className === "add-iframe") {
+            triggerVideo(input.value, test, elem);
+          }
         }
       }
     }

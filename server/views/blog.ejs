@@ -9,9 +9,11 @@
             <h1><%= item.content %></h1>
           <% } else if (item.tag === "p") { %>
             <p><%= item.content %></p>
-        <% } else if (item.tag === "img") { %>
+          <% } else if (item.tag === "img") { %>
             <img src="<%= item.content %>" />
-      <% }}) %>
+          <% } else if (item.tag === "iframe") { %>
+            <iframe src="<%= item.content %>" frameborder="0" allowfullscreen></iframe>
+          <% }}) %>
         </div>
       </div>
     <% }) %>

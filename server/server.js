@@ -49,7 +49,11 @@ function ensureAuthenticated(req, res, next) {
 app.use(express.static('public'));
 
 app.get("/", function(req, res) {
-    res.render("index");
+  res.render("index");
+});
+
+app.get("/admin", function(req, res) {
+  res.render("admin");
 });
 
 app.get("/signup", function(req, res) {
@@ -66,6 +70,7 @@ app.get("/blog", ensureAuthenticated, function(req, res) {
   var posts = []
   console.log(req.params)
   Post.find()
+    .sort({ createdAt: "descending" })
     .exec(function(err, data) {
       if (err) {
         console.log(err)

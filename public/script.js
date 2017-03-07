@@ -8,6 +8,8 @@ if (window.PB === undefined) {
 
   var test = document.querySelector("#test");
   var buttons = document.querySelector("#buttons");
+  var inputTag = document.querySelector("#item-tag");
+  var tagButton = document.querySelector("#tag-button");
 
   function specifyElementAndCreate(tag) {
     var element = new PB.PostElement();
@@ -15,11 +17,15 @@ if (window.PB === undefined) {
     if (tag === "img") {
       element.addSourceInput(test, "add-img");
     } else if (tag === "iframe") {
-      console.log("specify and create");
       element.addSourceInput(test, 'add-iframe');
     } else {
       element.create(tag, test);
     }
+  }
+
+  function addTag(input) {
+    var tag = new PB.PostElement();
+    tag.setTag(input);
   }
 
   function triggerImage(target, test, elem) {
@@ -28,7 +34,6 @@ if (window.PB === undefined) {
   }
 
   function triggerVideo(target, test, elem) {
-    console.log("triggered Video");
     var element = new PB.PostElement();
     element.addVideo(target, test, elem);
   }
@@ -77,6 +82,10 @@ if (window.PB === undefined) {
         }
       }
     }
+  });
+
+  tagButton.addEventListener("click", function () {
+    addTag(inputTag.value);
   });
 })();
 //# sourceMappingURL=script.js.map

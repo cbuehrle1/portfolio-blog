@@ -14,9 +14,9 @@ module.exports = function () {
 
     var post = new Post ();
 
-    post.title = req.body.title,
-    post.author = req.user.username,
-    post.body = req.body.body,
+    post.title = req.body.title
+    post.tag = req.body.tag
+    post.body = req.body.body
 
     post.save(cb);
 

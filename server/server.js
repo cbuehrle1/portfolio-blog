@@ -57,13 +57,14 @@ app.get("/signup", function(req, res) {
 });
 
 app.get("/login", function(req, res) {
+  console.log(req.params)
   res.render("login", { message: req.flash("login") });
 });
 
 app.get("/blog", ensureAuthenticated, function(req, res) {
 
   var posts = []
-
+  console.log(req.params)
   Post.find()
     .exec(function(err, data) {
       if (err) {
@@ -75,10 +76,9 @@ app.get("/blog", ensureAuthenticated, function(req, res) {
         var item = {
           title: post.title,
           id: post._id,
-          author: post.author,
+          tag: post.tag,
           date: post.createdAt,
-          body: JSON.parse(post.body),
-          comments: post.comments
+          body: JSON.parse(post.body)
         }
 
         posts.push(item);
@@ -89,6 +89,27 @@ app.get("/blog", ensureAuthenticated, function(req, res) {
 
 app.get("/new", ensureAuthenticated, function (req, res) {
   res.render("new");
+});
+
+app.get("/:postId", ensureAuthenticated, function(req, res) {
+
+  Post.findById(req.params.postId)
+  .exec(function(err, data) {
+    if (err) {
+      console.log("error")
+    }
+
+    var item = data;
+
+    post = {
+      title: item.title,
+      tag: item.tag,
+      date: item.createdAt,
+      body: JSON.parse(item.body),
+    }
+    res.render('blog-post', { post: post })
+  });
+
 });
 
 app.post("/login", passport.authenticate("login", {

@@ -4,6 +4,8 @@ if (window.PB === undefined) { window.PB = {}; }
 
   var test = document.querySelector("#test");
   var buttons = document.querySelector("#buttons");
+  var inputTag = document.querySelector("#item-tag");
+  var tagButton = document.querySelector("#tag-button");
 
   function specifyElementAndCreate (tag) {
     var element = new PB.PostElement();
@@ -12,7 +14,6 @@ if (window.PB === undefined) { window.PB = {}; }
       element.addSourceInput(test, "add-img");
     }
     else if (tag === "iframe") {
-      console.log("specify and create");
       element.addSourceInput(test, 'add-iframe')
     }
     else {
@@ -21,13 +22,17 @@ if (window.PB === undefined) { window.PB = {}; }
 
   }
 
+  function addTag (input) {
+    var tag = new PB.PostElement();
+    tag.setTag(input);
+  }
+
   function triggerImage (target, test, elem) {
     var element = new PB.PostElement();
     element.addImage(target, test, elem);
   }
 
   function triggerVideo (target, test, elem) {
-    console.log("triggered Video")
     var element = new PB.PostElement();
     element.addVideo(target, test, elem);
   }
@@ -84,5 +89,8 @@ if (window.PB === undefined) { window.PB = {}; }
       }
   });
 
+  tagButton.addEventListener("click", function() {
+    addTag(inputTag.value);
+  });
 
 })()

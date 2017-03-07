@@ -4,7 +4,7 @@ if (window.PB === undefined) { window.PB = {}; }
 
   var cb = []
 
-  var newPostData = { title: "", body: [] };
+  var newPostData = { title: "", tag: "", body: [] };
 
   var setPostData = function (domElement, contents) {
 
@@ -35,6 +35,11 @@ if (window.PB === undefined) { window.PB = {}; }
         setPostData(element, content);
       }
 
+      setTag(tag) {
+        newPostData.tag = tag;
+        console.log(newPostData);
+      }
+
       addSourceInput(destination, tag) {
         var inputContainer = document.createElement("div");
         var input = document.createElement("input");
@@ -59,7 +64,6 @@ if (window.PB === undefined) { window.PB = {}; }
       }
 
       addVideo(contents, destination, remove) {
-        console.log("iframe")
         var video = document.createElement("iframe");
         video.src = contents;
         remove.remove();
@@ -79,6 +83,7 @@ if (window.PB === undefined) { window.PB = {}; }
           method: "POST",
           data: {
             title: post.title,
+            tag: post.tag,
             body: JSON.stringify(post.body)
           }
         })

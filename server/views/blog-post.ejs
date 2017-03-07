@@ -1,7 +1,13 @@
 <% include _header %>
   <div class="recent-post-float">
-    <h1>Most Recent Posts</h1>
     <div>
+    <h1>Most Recent Posts</h1>
+      <% recent.forEach(function(post) { %>
+        <div class="recent-div-post">
+          <h2><%= post.title %></h1>
+          <h3><%= post.createdAt %></h2>
+        </div>
+      <% }) %>
     </div>
   </div>
   <div class="single-post-float">

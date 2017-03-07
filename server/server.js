@@ -99,8 +99,7 @@ app.get("/:postId", ensureAuthenticated, function(req, res) {
     if (err) {
       console.log(err);
     }
-    console.log(indivdualPost);
-    console.log(data);
+
     res.render("blog-post", { post: indivdualPost, recent: data });
   }
 

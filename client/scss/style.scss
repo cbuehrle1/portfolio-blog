@@ -3,9 +3,62 @@ body{
   background-color: rgba(0, 0, 0, 0.05);
   font-family: 'Signika', sans-serif;
 }
-
+.container{
+  overflow: auto;
+}
+.recent-post-float{
+  float: left;
+  width: 33%;
+  div{
+    background-color: #FFF;
+    width: 80%;
+    margin: 20px auto;
+    padding: 3% 5%;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
+  }
+  h1{
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .recent-div-post{
+    box-shadow: none;
+    padding: 3% 5%;
+    margin: 0 0 10px 0;
+    border-bottom: solid 1px black;
+  }
+}
+.single-post-float{
+  float: left;
+  width: 67%;
+}
 .ejs-blog-post{
-  width: 680px;
+  width: 82%;
+  background-color: #FFF;
+  margin: 20px auto;
+  padding: 3% 5%;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
+  h1{
+    font-size: 36px;
+  }
+  h2{
+    font-size: 16px;
+    margin-bottom: 5%;
+  }
+  p{
+    font-size: 20px;
+    margin-bottom: 3%;
+  }
+  img{
+    width: 50%;
+    height: 50%;
+  }
+  iframe{
+    width: 100%;
+    height: 360px;
+  }
+}
+.ejs-front-page-post{
+  width: 55%;
   background-color: #FFF;
   margin: 20px auto;
   padding: 3% 5%;

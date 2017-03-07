@@ -93,10 +93,20 @@ app.get("/new", ensureAuthenticated, function (req, res) {
 
 app.get("/:postId", ensureAuthenticated, function(req, res) {
 
-  Post.findById(req.params.postId)
-  .exec(function(err, data) {
+  var indivdualPost;
+
+  var cb = function (err, data) {
     if (err) {
-      console.log("error")
+      console.log(err);
+    }
+    console.log(indivdualPost);
+    console.log(data);
+    res.render("blog-post", { post: indivdualPost, recent: data });
+  }
+
+  var pushToIndivAndStartRecent = function (err, data) {
+    if (err) {
+      console.log(err)
     }
 
     var item = data;
@@ -107,8 +117,16 @@ app.get("/:postId", ensureAuthenticated, function(req, res) {
       date: item.createdAt,
       body: JSON.parse(item.body),
     }
-    res.render('blog-post', { post: post })
-  });
+
+    indivdualPost = post;
+
+    Post.find()
+    .sort({ createdAt: "descending" })
+    .limit(5)
+    .exec(cb);
+  }
+
+  Post.findById(req.params.postId, pushToIndivAndStartRecent);
 
 });
 

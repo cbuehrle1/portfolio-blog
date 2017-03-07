@@ -79,22 +79,51 @@ body {
 .about-div {
   overflow: auto; }
 
+.about-header {
+  position: relative; }
+  .about-header h1 {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    font-size: 24px;
+    padding: 2.5% 2.5%;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    transform: translate(-45%, -45%);
+    text-align: center; }
+
 .float-div {
   float: left;
   width: 50%;
   position: relative; }
 
+.float-div-right {
+  float: right;
+  width: 50%;
+  position: relative; }
+
+.float-centering-right {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  width: 30%;
+  padding: 5% 1%;
+  margin-left: 5%;
+  cursor: pointer;
+  text-align: center; }
+  .float-centering-right .float-content {
+    font-size: 24px; }
+
 .float-centering {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
   background-color: white;
-  width: 50%;
-  padding: 10%;
-  margin: 10% 15% 0 15%;
+  width: 30%;
+  padding: 5% 1%;
+  margin-left: 55%;
   cursor: pointer;
   text-align: center; }
 
 .float-centering .float-content {
-  font-size: 28px; }
+  font-size: 24px; }
 
 header {
   position: fixed;

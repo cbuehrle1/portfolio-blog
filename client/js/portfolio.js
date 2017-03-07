@@ -1,16 +1,16 @@
 var title = document.querySelector(".title-container");
 var shader = document.querySelector(".container-shader");
 var about = document.querySelector(".about-container");
-var aboutFloat = document.querySelectorAll(".float-div");
-var aboutContent = document.querySelectorAll('.float-centering');
+var aboutHeader = document.querySelector(".about-header");
 var headerDiv = document.querySelector('header');
 
-
+var halfWindowHeight = window.innerHeight / 1.5;
 
 title.style.height = window.innerHeight + "px";
 shader.style.height = window.innerHeight + "px";
 shader.style.width = window.innerWidth + "px";
-about.style.height = window.innerHeight + "px";
+about.style.height = halfWindowHeight + "px";
+aboutHeader.style.height = (halfWindowHeight / 1.5) + "px";
 
 var throttle = function(type, name, obj) {
         obj = obj || window;
@@ -34,7 +34,7 @@ window.addEventListener("optimizedResize", function() {
   shader.style.height = window.innerHeight + "px";
   about.style.height = window.innerHeight + "px";
   shader.style.width = window.innerWidth + "px";
-
+  aboutHeader.style.height = halfWindowHeight + "px";
 });
 
 window.addEventListener("scroll", function() {

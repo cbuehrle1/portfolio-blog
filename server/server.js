@@ -117,6 +117,7 @@ app.get("/:postId", ensureAuthenticated, function(req, res) {
 
     post = {
       title: item.title,
+      id: item._id,
       tag: item.tag,
       date: item.createdAt,
       body: JSON.parse(item.body),

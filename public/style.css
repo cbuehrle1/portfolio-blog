@@ -47,7 +47,7 @@ table {
 
 body {
   background-color: rgba(0, 0, 0, 0.05);
-  font-family: 'Signika', sans-serif; }
+  font-family: 'Open Sans', sans-serif; }
 
 .container {
   overflow: auto; }
@@ -57,37 +57,50 @@ body {
   width: 33%; }
   .recent-post-float div {
     background-color: #FFF;
-    width: 80%;
+    width: 65%;
     margin: 20px auto;
     padding: 3% 5%;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2); }
   .recent-post-float h1 {
-    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center; }
+  .recent-post-float h2 {
+    font-size: 16px;
+    margin-bottom: 5px; }
+  .recent-post-float h3 {
+    font-size: 12px;
     margin-bottom: 10px; }
   .recent-post-float .recent-div-post {
     box-shadow: none;
     padding: 3% 5%;
-    margin: 0 0 10px 0;
-    border-bottom: solid 1px black; }
+    margin: 0 auto 10px auto;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.2); }
+    .recent-post-float .recent-div-post a {
+      text-decoration: none; }
 
 .single-post-float {
   float: left;
   width: 67%; }
 
 .ejs-blog-post {
-  width: 82%;
+  width: 78%;
   background-color: #FFF;
   margin: 20px auto;
   padding: 3% 5%;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2); }
   .ejs-blog-post h1 {
-    font-size: 36px; }
+    font-size: 36px;
+    text-align: center; }
   .ejs-blog-post h2 {
     font-size: 16px;
     margin-bottom: 5%; }
+  .ejs-blog-post a {
+    text-decoration: none;
+    color: black; }
   .ejs-blog-post p {
-    font-size: 20px;
-    margin-bottom: 3%; }
+    font-size: 16px;
+    margin-bottom: 3%;
+    line-height: 1.5em; }
   .ejs-blog-post img {
     width: 50%;
     height: 50%; }
@@ -102,19 +115,32 @@ body {
   padding: 3% 5%;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2); }
   .ejs-front-page-post h1 {
-    font-size: 36px; }
+    font-size: 36px;
+    text-align: center; }
+  .ejs-front-page-post a {
+    text-decoration: none;
+    color: black; }
   .ejs-front-page-post h2 {
-    font-size: 16px;
-    margin-bottom: 5%; }
+    font-size: 16px; }
   .ejs-front-page-post p {
-    font-size: 20px;
-    margin-bottom: 3%; }
+    font-size: 16px;
+    margin-bottom: 3%;
+    line-height: 1.5em; }
   .ejs-front-page-post img {
     width: 50%;
     height: 50%; }
   .ejs-front-page-post iframe {
     width: 100%;
     height: 360px; }
+
+.ejs-post-header {
+  margin-bottom: 15px; }
+  .ejs-post-header h2 {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.4); }
+  .ejs-post-header .comment-counter {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 16px; }
 
 #test {
   width: 680px;

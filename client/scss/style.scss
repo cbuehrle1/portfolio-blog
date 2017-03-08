@@ -1,7 +1,7 @@
 @import 'reset';
 body{
   background-color: rgba(0, 0, 0, 0.05);
-  font-family: 'Signika', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 .container{
   overflow: auto;
@@ -11,20 +11,31 @@ body{
   width: 33%;
   div{
     background-color: #FFF;
-    width: 80%;
+    width: 65%;
     margin: 20px auto;
     padding: 3% 5%;
     box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
   }
   h1{
-    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  h2{
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  h3{
+    font-size: 12px;
     margin-bottom: 10px;
   }
   .recent-div-post{
     box-shadow: none;
     padding: 3% 5%;
-    margin: 0 0 10px 0;
-    border-bottom: solid 1px black;
+    margin: 0 auto 10px auto;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+    a{
+      text-decoration: none;
+    }
   }
 }
 .single-post-float{
@@ -32,21 +43,27 @@ body{
   width: 67%;
 }
 .ejs-blog-post{
-  width: 82%;
+  width: 78%;
   background-color: #FFF;
   margin: 20px auto;
   padding: 3% 5%;
   box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
   h1{
     font-size: 36px;
+    text-align: center;
   }
   h2{
     font-size: 16px;
     margin-bottom: 5%;
   }
+  a{
+    text-decoration: none;
+    color: black;
+  }
   p{
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 3%;
+    line-height: 1.5em;
   }
   img{
     width: 50%;
@@ -65,14 +82,19 @@ body{
   box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
   h1{
     font-size: 36px;
+    text-align: center;
+  }
+  a{
+    text-decoration: none;
+    color: black;
   }
   h2{
     font-size: 16px;
-    margin-bottom: 5%;
   }
   p{
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 3%;
+    line-height: 1.5em;
   }
   img{
     width: 50%;
@@ -81,6 +103,17 @@ body{
   iframe{
     width: 100%;
     height: 360px;
+  }
+}
+.ejs-post-header{
+  margin-bottom: 15px;
+  h2{
+    text-align: center;
+    color: rgba(0, 0, 0, 0.4);
+  }
+  .comment-counter{
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 16px;
   }
 }
 #test{

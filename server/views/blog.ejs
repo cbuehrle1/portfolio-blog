@@ -2,8 +2,10 @@
   <a href="/new">Make a new Post</a>
     <% posts.forEach(function (post) { %>
       <div class="ejs-front-page-post">
-        <h1><a href="/<%= post.id %>"><%= post.title %></a></h1>
-        <h2><%= post.date %> Tag: <%= post.tag %></h2>
+        <div class="ejs-post-header">
+          <h1><a href="/<%= post.id %>"><%= post.title %></a></h1>
+          <h2><%= post.date.toDateString() %></h2>
+        </div>
         <div><% post.body.forEach(function(item) { %>
           <% if (item.tag === "h2") { %>
             <h2><%= item.content %></h2>
@@ -15,6 +17,7 @@
             <iframe src="<%= item.content %>" frameborder="0" allowfullscreen></iframe>
           <% }}) %>
         </div>
+        <h2>Tag: <%= post.tag %></h2>
       </div>
     <% }) %>
   </div>

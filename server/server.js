@@ -65,10 +65,10 @@ app.get("/login", function(req, res) {
   res.render("login", { message: req.flash("login") });
 });
 
-app.get("/blog", ensureAuthenticated, function(req, res) {
+app.get("/blog", function(req, res) {
 
   var posts = []
-  console.log(req.params)
+
   Post.find()
     .sort({ createdAt: "descending" })
     .exec(function(err, data) {
@@ -92,11 +92,75 @@ app.get("/blog", ensureAuthenticated, function(req, res) {
     });
 });
 
+app.get("/blog-admin", ensureAuthenticated, function(req, res) {
+  var posts = []
+
+  Post.find()
+    .sort({ createdAt: "descending" })
+    .exec(function(err, data) {
+      if (err) {
+        console.log(err)
+      }
+
+      data.forEach((post) => {
+
+        var item = {
+          title: post.title,
+          id: post._id,
+          tag: post.tag,
+          date: post.createdAt,
+          body: JSON.parse(post.body)
+        }
+
+        posts.push(item);
+      });
+      res.render('admin-blog', { posts: posts });
+    });
+});
+
+app.get("/admin/:postId", ensureAuthenticated, function(req, res) {
+  var indivdualPost;
+
+  var cb = function (err, data) {
+    if (err) {
+      console.log(err);
+    }
+
+    res.render("admin-blog-post", { post: indivdualPost, recent: data });
+  }
+
+  var pushToIndivAndStartRecent = function (err, data) {
+    if (err) {
+      console.log(err)
+    }
+
+    var item = data;
+
+    post = {
+      title: item.title,
+      id: item._id,
+      tag: item.tag,
+      date: item.createdAt,
+      body: JSON.parse(item.body),
+    }
+
+    indivdualPost = post;
+
+    Post.find()
+    .sort({ createdAt: "descending" })
+    .limit(5)
+    .exec(cb);
+  }
+
+  Post.findById(req.params.postId, pushToIndivAndStartRecent);
+
+});
+
 app.get("/new", ensureAuthenticated, function (req, res) {
   res.render("new");
 });
 
-app.get("/:postId", ensureAuthenticated, function(req, res) {
+app.get("/:postId", function(req, res) {
 
   var indivdualPost;
 
@@ -136,7 +200,7 @@ app.get("/:postId", ensureAuthenticated, function(req, res) {
 });
 
 app.post("/login", passport.authenticate("login", {
-  successRedirect: "/blog",
+  successRedirect: "/blog-admin",
   failureRedirect: "/login"
 }));
 
@@ -160,7 +224,7 @@ app.post("/signup", function(req, res, next) {
 
     });
   }, passport.authenticate("login", {
-    successRedirect: "/blog",
+    successRedirect: "/blog-admin",
     failureRedirect: "/signup",
 }));
 

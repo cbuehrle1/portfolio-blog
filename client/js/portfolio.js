@@ -33,8 +33,8 @@ window.addEventListener("optimizedResize", function() {
   title.style.height = window.innerHeight + "px";
   shader.style.height = window.innerHeight + "px";
   about.style.height = window.innerHeight + "px";
-  shader.style.width = window.innerWidth + "px";
-  aboutHeader.style.height = halfWindowHeight + "px";
+  shader.style.width = halfWindowHeight + "px";
+  aboutHeader.style.height = (halfWindowHeight / 1.5) + "px";
 });
 
 window.addEventListener("scroll", function() {

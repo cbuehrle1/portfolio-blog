@@ -22,5 +22,13 @@ module.exports = function () {
 
   });
 
+  router.delete("/api/:blogId", function(req, res) {
+    var cb = (err, data) => {
+      console.log(data);
+      res.redirect("/blog-admin");
+    }
+    Post.findByIdAndRemove(req.params.blogId, cb);
+  });
+
   return router;
 }

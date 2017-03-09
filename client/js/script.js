@@ -6,6 +6,7 @@ if (window.PB === undefined) { window.PB = {}; }
   var buttons = document.querySelector("#buttons");
   var inputTag = document.querySelector("#item-tag");
   var tagButton = document.querySelector("#tag-button");
+  var tagClass = document.querySelector(".tag-class");
 
   function specifyElementAndCreate (tag) {
     var element = new PB.PostElement();
@@ -91,6 +92,7 @@ if (window.PB === undefined) { window.PB = {}; }
 
   tagButton.addEventListener("click", function() {
     addTag(inputTag.value);
+    tagClass.innerHTML = "";
   });
 
 })()

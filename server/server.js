@@ -94,7 +94,7 @@ app.get("/blog", function(req, res) {
 
 app.get("/blog-admin", ensureAuthenticated, function(req, res) {
   var posts = []
-
+  console.log(res.locals.currentUser)
   Post.find()
     .sort({ createdAt: "descending" })
     .exec(function(err, data) {
@@ -209,9 +209,10 @@ app.post("/signup", function(req, res, next) {
   var password = req.body.password;
   var displayName = req.body.displayName;
 
-  User.findOne({ username: username }, function(err, user) {
+  User.find()
+  .exec(function(err, user) {
     if (err) { return next(err); }
-    if (user) {
+    if (user.length > 0) {
       return res.redirect("/login");
     }
 

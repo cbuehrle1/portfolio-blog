@@ -128,7 +128,8 @@ body {
     line-height: 1.5em; }
   .ejs-blog-post img {
     width: 50%;
-    height: 50%; }
+    height: 50%;
+    margin: 10px auto; }
   .ejs-blog-post iframe {
     width: 100%;
     height: 360px; }
@@ -154,7 +155,9 @@ body {
     line-height: 1.5em; }
   .ejs-front-page-post img {
     width: 50%;
-    height: 50%; }
+    height: 50%;
+    margin: 10px auto;
+    display: block; }
   .ejs-front-page-post iframe {
     width: 100%;
     height: 360px; }

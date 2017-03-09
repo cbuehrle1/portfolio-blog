@@ -24,6 +24,7 @@
       <div class="ejs-post-header">
         <h1><%= post.title %></h1>
         <h2><a class="comment-counter" href="/<%= post.id %>#disqus_thread"></a> | <%= post.date.toDateString() %></h2>
+        <h2 class="remove-post">Remove Post</h2>
       </div>
       <div><% post.body.forEach(function(item) { %>
         <% if (item.tag === "h2") { %>
@@ -39,4 +40,19 @@
       </div>
     </div>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+
+    var remove = document.querySelector(".remove-post");
+
+    remove.addEventListener("click", function() {
+      var url = window.location.pathname;
+      var paramArray = url.split("/");
+      var post = new PB.Post ()
+
+      post.removePost(paramArray[2]);
+    });
+
+  </script>
+  <script src="post_element.js"></script>
 <% include _footer %>

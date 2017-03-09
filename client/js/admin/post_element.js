@@ -90,9 +90,7 @@ if (window.PB === undefined) { window.PB = {}; }
         .done(function(data) {
           window.location = "/blog-admin"
         });
-
       }
-
       removePost(id) {
 
         $.ajax({
@@ -100,7 +98,7 @@ if (window.PB === undefined) { window.PB = {}; }
           method: "DELETE"
         })
         .done(function(data) {
-          
+      
         });
 
       }

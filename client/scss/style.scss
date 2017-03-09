@@ -3,8 +3,38 @@ body{
   background-color: rgba(0, 0, 0, 0.05);
   font-family: 'Open Sans', sans-serif;
 }
+.blog-nav{
+  overflow: auto;
+  position: fixed;
+  font-size: 18px;
+  width: 98%;
+  padding: 1%;
+  background-color: #508991;
+  color: white;
+  .nav-float-left{
+    float: left;
+    width: 50%;
+    text-align: left;
+  }
+  .nav-float-right{
+    float: right;
+    width: 50%;
+    text-align: right;
+  }
+  a{
+    color: white;
+    text-decoration: none;
+  }
+}
 .container{
   overflow: auto;
+  .blog-title{
+    margin: 75px auto 30px auto;
+    h1{
+      font-size: 36px;
+      text-align: center;
+    }
+  }
 }
 .recent-post-float{
   float: left;
@@ -83,6 +113,7 @@ body{
   h1{
     font-size: 36px;
     text-align: center;
+    margin-bottom: 5px;
   }
   a{
     text-decoration: none;
@@ -136,4 +167,264 @@ body{
     width: 50%;
     height: 50%;
   }
+}
+footer{
+  overflow: auto;
+  width: 98%;
+  font-size: 18px;
+  width: 98%;
+  padding: 1%;
+  background-color: #508991;
+  color: white;
+  .footer-float-left{
+    float: left;
+    width: 50%;
+    .footer-left-vert-center{
+      padding-top: 2%;
+      a{
+        text-decoration: none;
+        color: white;
+      }
+      h4{
+        float: left;
+        width: 20%;
+      }
+      li{
+        text-align: center;
+        float: left;
+        width: 15%;
+      }
+    }
+  }
+  .footer-float-right{
+    float: right;
+    overflow: auto;
+    width: 40%;
+    text-align: right;
+    .github-icon{
+      float: right;
+      width: 8%;
+      border-radius: 3px;
+      height: 40px;
+      margin: 0 .5%;
+      background-image: url("https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top;
+    }
+    .linkedin-icon{
+      float: right;
+      width: 9%;
+      height: 42px;
+      margin: 0 .5%;
+      background-image: url("http://netdna.copyblogger.com/images/linkedin.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .ejs-front-page-post{
+    width: 70%;
+  }
+  footer{
+    .footer-float-left{
+      .footer-left-vert-center{
+        h4{
+          float: none;
+          width: auto;
+          text-align: left;
+          margin-bottom: 1%;
+        }
+        li{
+          float: none;
+          width: auto;
+          text-align: left;
+          margin-bottom: 1%;
+        }
+      }
+    }
+    .footer-float-right{
+      .github-icon{
+      }
+      .linkedin-icon{
+      }
+    }
+  }
+}
+@media (max-width: 1118px) {
+  footer{
+    .footer-float-right{
+      .github-icon{
+        width: 10%;
+      }
+      .linkedin-icon{
+        width: 10%;
+      }
+    }
+  }
+}
+@media (max-width: 978px) {
+  footer{
+    .footer-float-right{
+      .github-icon{
+        width: 11%;
+      }
+      .linkedin-icon{
+        width: 11%;
+      }
+    }
+  }
+}
+@media (max-width: 891px) {
+  footer{
+    .footer-float-right{
+      .github-icon{
+        width: 12%;
+      }
+      .linkedin-icon{
+        width: 12%;
+      }
+    }
+  }
+}
+@media (max-width: 818px) {
+  footer{
+    .footer-float-right{
+      .github-icon{
+        width: 13%;
+      }
+      .linkedin-icon{
+        width: 13%;
+      }
+    }
+  }
+}
+@media (max-width: 760px) {
+  footer{
+    .footer-float-right{
+      .github-icon{
+        width: 15%;
+      }
+      .linkedin-icon{
+        width: 15%;
+      }
+    }
+  }
+}
+@media (max-width: 630px) {
+  footer{
+    .footer-float-right{
+      .github-icon{
+        width: 17%;
+      }
+      .linkedin-icon{
+        width: 17%;
+      }
+    }
+  }
+}
+@media (max-width: 560px) {
+  footer{
+    .footer-float-right{
+      .github-icon{
+        width: 20%;
+      }
+      .linkedin-icon{
+        width: 20%;
+      }
+    }
+  }
+}
+@media (max-width: 480px) {
+  .ejs-front-page-post{
+    width: 85%;
+    h1{
+      font-size: 24px;
+      text-align: center;
+    }
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    h2{
+      font-size: 12px;
+    }
+    p{
+      font-size: 14px;
+      margin-bottom: 3%;
+      line-height: 1.5em;
+    }
+    img{
+      width: 50%;
+      height: 50%;
+    }
+    iframe{
+      width: 100%;
+      height: 360px;
+    }
+  }
+  .container{
+    .blog-title{
+      margin: 45px auto 25px auto;
+      h1{
+        font-size: 24px;
+      }
+    }
+  }
+  .blog-nav{
+    font-size: 14px;
+  }
+  footer{
+    .footer-float-left{
+      font-size: 14px;
+    }
+    .footer-float-right{
+      .github-icon{
+        width: 23%;
+        margin: 0 1%;
+      }
+      .linkedin-icon{
+        width: 23%;
+        margin: 0 1%;
+      }
+    }
+  }
+}
+@media (max-width: 450px) {
+  footer{
+    .footer-float-left{
+      font-size: 12px;
+      margin-left: 2%;
+    }
+    .footer-float-right{
+      .github-icon{
+        width: 24%;
+        margin: 0 2%;
+      }
+      .linkedin-icon{
+        width: 24%;
+        margin: 0 2%;
+      }
+  }
+}
+}
+@media (max-width: 380px) {
+  footer{
+    .footer-float-left{
+      font-size: 12px;
+      margin-left: 2%;
+    }
+    .footer-float-right{
+      .github-icon{
+        width: 30%;
+        margin: 0 2%;
+      }
+      .linkedin-icon{
+        width: 30%;
+        margin: 0 2%;
+      }
+  }
+}
 }

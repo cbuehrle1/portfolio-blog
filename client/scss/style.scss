@@ -278,6 +278,16 @@ footer{
   }
 }
 @media (max-width: 891px) {
+  .recent-post-float{
+    display: none;
+  }
+  .single-post-float{
+    float: none;
+    width: 100%;
+  }
+  .ejs-blog-post{
+    width: 80%;
+  }
   footer{
     .footer-float-right{
       .github-icon{
@@ -314,6 +324,20 @@ footer{
   }
 }
 @media (max-width: 630px) {
+  .ejs-blog-post{
+    h1{
+      font-size: 24px;
+    }
+    h2{
+      font-size: 12px;
+    }
+    p{
+      font-size: 12px;
+    }
+    a{
+      font-size: 12px;
+    }
+  }
   footer{
     .footer-float-right{
       .github-icon{

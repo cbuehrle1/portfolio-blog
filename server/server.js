@@ -69,54 +69,27 @@ app.get("/blog", function(req, res) {
 
   var posts = []
 
-  var query;
+  Post.find(req.query)
+    .sort({ createdAt: "descending" })
+    .exec(function(err, data) {
+      if (err) {
+        console.log(err)
+      }
 
-  if (req.query.tag !== undefined) {
-    Post.find({ tag: req.query.tag })
-      .sort({ createdAt: "descending" })
-      .exec(function(err, data) {
-        if (err) {
-          console.log(err)
+      data.forEach((post) => {
+
+        var item = {
+          title: post.title,
+          id: post._id,
+          tag: post.tag,
+          date: post.createdAt,
+          body: JSON.parse(post.body)
         }
 
-        data.forEach((post) => {
-
-          var item = {
-            title: post.title,
-            id: post._id,
-            tag: post.tag,
-            date: post.createdAt,
-            body: JSON.parse(post.body)
-          }
-
-          posts.push(item);
-        });
-        res.render('blog', { posts: posts });
+        posts.push(item);
       });
-  } else {
-    Post.find()
-      .sort({ createdAt: "descending" })
-      .exec(function(err, data) {
-        if (err) {
-          console.log(err)
-        }
-
-        data.forEach((post) => {
-
-          var item = {
-            title: post.title,
-            id: post._id,
-            tag: post.tag,
-            date: post.createdAt,
-            body: JSON.parse(post.body)
-          }
-
-          posts.push(item);
-        });
-        res.render('blog', { posts: posts });
-      });
-  }
-
+      res.render('blog', { posts: posts });
+    });
 });
 
 app.get("/blog-admin", ensureAuthenticated, function(req, res) {

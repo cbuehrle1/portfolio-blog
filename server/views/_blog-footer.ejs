@@ -4,9 +4,9 @@
       <h4>View By Tag:</h4>
       <ul>
         <li><a href="/blog?tag=Javascript">JavaScript</a></li>
-        <li><a href="">Node.js</a></li>
-        <li><a href="">HTML/CSS</a></li>
-        <li><a href="">.NET</a></li>
+        <li><a href="/blog?tag=Node.js">Node.js</a></li>
+        <li><a href="/blog?tag=CSS">HTML/CSS</a></li>
+        <li><a href="/blog?tag=.NET">.NET</a></li>
       <ul>
     </div>
   </div>
@@ -17,5 +17,9 @@
     </div>
   </div>
 </footer>
+<script>
+  var container = document.querySelector(".container");
+  container.style.minHeight = window.innerHeight + "px";
+</script>
 </body>
 </html>

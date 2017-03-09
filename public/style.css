@@ -259,6 +259,13 @@ footer {
     width: 11%; } }
 
 @media (max-width: 891px) {
+  .recent-post-float {
+    display: none; }
+  .single-post-float {
+    float: none;
+    width: 100%; }
+  .ejs-blog-post {
+    width: 80%; }
   footer .footer-float-right .github-icon {
     width: 12%; }
   footer .footer-float-right .linkedin-icon {
@@ -277,6 +284,14 @@ footer {
     width: 15%; } }
 
 @media (max-width: 630px) {
+  .ejs-blog-post h1 {
+    font-size: 24px; }
+  .ejs-blog-post h2 {
+    font-size: 12px; }
+  .ejs-blog-post p {
+    font-size: 12px; }
+  .ejs-blog-post a {
+    font-size: 12px; }
   footer .footer-float-right .github-icon {
     width: 17%; }
   footer .footer-float-right .linkedin-icon {

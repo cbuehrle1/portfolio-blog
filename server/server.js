@@ -69,27 +69,54 @@ app.get("/blog", function(req, res) {
 
   var posts = []
 
-  Post.find()
-    .sort({ createdAt: "descending" })
-    .exec(function(err, data) {
-      if (err) {
-        console.log(err)
-      }
+  var query;
 
-      data.forEach((post) => {
-
-        var item = {
-          title: post.title,
-          id: post._id,
-          tag: post.tag,
-          date: post.createdAt,
-          body: JSON.parse(post.body)
+  if (req.query.tag !== undefined) {
+    Post.find({ tag: req.query.tag })
+      .sort({ createdAt: "descending" })
+      .exec(function(err, data) {
+        if (err) {
+          console.log(err)
         }
 
-        posts.push(item);
+        data.forEach((post) => {
+
+          var item = {
+            title: post.title,
+            id: post._id,
+            tag: post.tag,
+            date: post.createdAt,
+            body: JSON.parse(post.body)
+          }
+
+          posts.push(item);
+        });
+        res.render('blog', { posts: posts });
       });
-      res.render('blog', { posts: posts });
-    });
+  } else {
+    Post.find()
+      .sort({ createdAt: "descending" })
+      .exec(function(err, data) {
+        if (err) {
+          console.log(err)
+        }
+
+        data.forEach((post) => {
+
+          var item = {
+            title: post.title,
+            id: post._id,
+            tag: post.tag,
+            date: post.createdAt,
+            body: JSON.parse(post.body)
+          }
+
+          posts.push(item);
+        });
+        res.render('blog', { posts: posts });
+      });
+  }
+
 });
 
 app.get("/blog-admin", ensureAuthenticated, function(req, res) {

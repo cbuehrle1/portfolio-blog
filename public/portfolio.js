@@ -6,7 +6,7 @@ var about = document.querySelector(".about-container");
 var aboutHeader = document.querySelector(".about-header");
 var headerDiv = document.querySelector('header');
 
-var halfWindowHeight = window.innerHeight / 1.5;
+var halfWindowHeight = window.innerHeight / 2;
 
 title.style.height = window.innerHeight + "px";
 shader.style.height = window.innerHeight + "px";

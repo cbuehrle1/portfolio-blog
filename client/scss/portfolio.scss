@@ -32,18 +32,19 @@ body{
 }
 .about-div{
 	overflow: auto;
+  width: 100%;
 }
 .about-header{
   position: relative;
   h1{
     position: absolute;
-    top: 45%;
-    left: 45%;
+    top: 50%;
+    left: 50%;
     font-size: 24px;
     padding: 2.5% 2.5%;
     border-left: solid 1px black;
     border-right: solid 1px black;
-    transform: translate(-45%, -45%);
+    transform: translate(-50%, -50%);
   	text-align: center;
   }
 }
@@ -97,18 +98,36 @@ header h1{
 	background-color: white;
 	color: black;
 }
-.project-container{
-	overflow: auto;
-	margin-top: 25px;
-}.project-container-first{
-	overflow: auto;
-	margin-top: 0;
+.portfolio-container{
+  width: 75%;
+  margin: 0 auto 20px;
+  overflow: auto;
+  .port-float-left{
+    float: left;
+    width: 50%;
+  }
+  .port-float-right{
+    float: left;
+    width: 50%;
+  }
 }
-.project-float{
-	float: left;
-	width: 25%;
-	margin: 0 7.5%;
-	padding: 5%;
-	box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
-	background-color: white;
+#proj-1{
+  background-image: url("/images/diet-app.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  width: 90%;
+  height: 250px;
+  margin: 0 auto;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
+}
+#proj-2{
+  background-image: url("/images/octocats.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  width: 95%;
+  height: 250px;
+  margin-left: 0 auto;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
 }

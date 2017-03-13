@@ -130,18 +130,25 @@ header h1{
           transition-timing-function: ease-out;
           transition-delay: initial;
           transform: translate(-50%, -30%);
-          button{
-            opacity: 0;
-            margin-top: 10px;
-            padding: 10px;
+          a{
+            text-decoration: none;
             color: white;
-            border: solid 2px white;
-            display: inline-block;
-            background-color: rgba(0, 0, 0, 0);
-          }
-          button:hover{
-            background-color: white;
-            color: #000;
+            height: 100%;
+            width: 100%;
+            button{
+              cursor: pointer;
+              opacity: 0;
+              margin-top: 10px;
+              padding: 10px;
+              color: white;
+              border: solid 2px white;
+              display: inline-block;
+              background-color: rgba(0, 0, 0, 0);
+            }
+            button:hover{
+              background-color: white;
+              color: #000;
+            }
           }
         }
       }
@@ -183,18 +190,25 @@ header h1{
           transition-timing-function: ease-out;
           transition-delay: initial;
           transform: translate(-50%, -30%);
-          button{
-            opacity: 0;
-            margin-top: 10px;
-            padding: 10px;
+          a{
+            text-decoration: none;
             color: white;
-            border: solid 2px white;
-            display: inline-block;
-            background-color: rgba(0, 0, 0, 0);
-          }
-          button:hover{
-            background-color: white;
-            color: #000;
+            height: 100%;
+            width: 100%;
+            button{
+              cursor: pointer;
+              opacity: 0;
+              margin-top: 10px;
+              padding: 10px;
+              color: white;
+              border: solid 2px white;
+              display: inline-block;
+              background-color: rgba(0, 0, 0, 0);
+            }
+            button:hover{
+              background-color: white;
+              color: #000;
+            }
           }
         }
       }

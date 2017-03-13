@@ -174,17 +174,23 @@ header h1 {
           transition-timing-function: ease-out;
           transition-delay: initial;
           transform: translate(-50%, -30%); }
-          .portfolio-container .port-float-left .port-shader-left .port-center-text .transform-div button {
-            opacity: 0;
-            margin-top: 10px;
-            padding: 10px;
+          .portfolio-container .port-float-left .port-shader-left .port-center-text .transform-div a {
+            text-decoration: none;
             color: white;
-            border: solid 2px white;
-            display: inline-block;
-            background-color: transparent; }
-          .portfolio-container .port-float-left .port-shader-left .port-center-text .transform-div button:hover {
-            background-color: white;
-            color: #000; }
+            height: 100%;
+            width: 100%; }
+            .portfolio-container .port-float-left .port-shader-left .port-center-text .transform-div a button {
+              cursor: pointer;
+              opacity: 0;
+              margin-top: 10px;
+              padding: 10px;
+              color: white;
+              border: solid 2px white;
+              display: inline-block;
+              background-color: transparent; }
+            .portfolio-container .port-float-left .port-shader-left .port-center-text .transform-div a button:hover {
+              background-color: white;
+              color: #000; }
       .portfolio-container .port-float-left .port-shader-left .port-center-text:hover .transform-div {
         transition-property: transform;
         transform: translate(-50%, -50%); }
@@ -217,17 +223,23 @@ header h1 {
           transition-timing-function: ease-out;
           transition-delay: initial;
           transform: translate(-50%, -30%); }
-          .portfolio-container .port-float-right .port-shader-right .port-center-text .transform-div button {
-            opacity: 0;
-            margin-top: 10px;
-            padding: 10px;
+          .portfolio-container .port-float-right .port-shader-right .port-center-text .transform-div a {
+            text-decoration: none;
             color: white;
-            border: solid 2px white;
-            display: inline-block;
-            background-color: transparent; }
-          .portfolio-container .port-float-right .port-shader-right .port-center-text .transform-div button:hover {
-            background-color: white;
-            color: #000; }
+            height: 100%;
+            width: 100%; }
+            .portfolio-container .port-float-right .port-shader-right .port-center-text .transform-div a button {
+              cursor: pointer;
+              opacity: 0;
+              margin-top: 10px;
+              padding: 10px;
+              color: white;
+              border: solid 2px white;
+              display: inline-block;
+              background-color: transparent; }
+            .portfolio-container .port-float-right .port-shader-right .port-center-text .transform-div a button:hover {
+              background-color: white;
+              color: #000; }
       .portfolio-container .port-float-right .port-shader-right .port-center-text:hover .transform-div {
         transition-property: transform;
         transform: translate(-50%, -50%); }

@@ -1,25 +1,29 @@
 <% include _blog-header %>
     <div class="blog-title">
-      <h1>Recent Posts</h1>
+      <h1 id="title-content"></h1>
     </div>
     <% posts.forEach(function (post) { %>
       <div class="ejs-front-page-post">
-        <div class="ejs-post-header">
-          <h1><a href="/<%= post.id %>"><%= post.title %></a></h1>
-          <h2><%= post.date.toDateString() %></h2>
+        <div class="constrain-height">
+          <div class="ejs-post-header">
+            <h1><a href="/<%= post.id %>"><%= post.title %></a></h1>
+            <h2><%= post.date.toDateString() %></h2>
+          </div>
+          <div><% post.body.forEach(function(item) { %>
+            <% if (item.tag === "h2") { %>
+              <h2><%= item.content %></h2>
+            <% } else if (item.tag === "p") { %>
+              <p><%= item.content %></p>
+            <% } else if (item.tag === "img") { %>
+              <img src="<%= item.content %>" />
+            <% } else if (item.tag === "iframe") { %>
+              <iframe src="<%= item.content %>" frameborder="0" allowfullscreen></iframe>
+            <% }}) %>
+          </diV>
+          <h2>Tag: <%= post.tag %></h2>
+          <div class="gradient-add"></div>
         </div>
-        <div><% post.body.forEach(function(item) { %>
-          <% if (item.tag === "h2") { %>
-            <h2><%= item.content %></h2>
-          <% } else if (item.tag === "p") { %>
-            <p><%= item.content %></p>
-          <% } else if (item.tag === "img") { %>
-            <img src="<%= item.content %>" />
-          <% } else if (item.tag === "iframe") { %>
-            <iframe src="<%= item.content %>" frameborder="0" allowfullscreen></iframe>
-          <% }}) %>
-        </div>
-        <h2>Tag: <%= post.tag %></h2>
+        <div class="align-right"><h2><a href="/<%= post.id %>">Read More..</a></h2></div>
       </div>
     <% }) %>
   </div>

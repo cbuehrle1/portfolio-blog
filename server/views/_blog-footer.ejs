@@ -19,7 +19,20 @@
 </footer>
 <script>
   var container = document.querySelector(".container");
+  var title = document.querySelector("#title-content")
   container.style.minHeight = window.innerHeight + "px";
+  if (title !== null) {
+    console.log("why we here");
+    if (window.location.search == "") {
+      title.textContent = "Recent Posts";
+    }
+    else {
+      var queryString = window.location.search;
+      queryString = queryString.substring(1);
+      var arr = queryString.split("=")
+      title.textContent = arr[0] + ": " + arr[1];
+    }
+  }
 </script>
 </body>
 </html>

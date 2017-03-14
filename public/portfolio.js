@@ -6,6 +6,7 @@ var about = document.querySelector(".about-container");
 var aboutHeader = document.querySelector(".about-header");
 var headerDiv = document.querySelector('header');
 var titleHeader = document.querySelector('.title-header-h1');
+var headerAnchor = document.querySelectorAll('.header-a');
 
 var halfWindowHeight = window.innerHeight / 2;
 
@@ -47,9 +48,15 @@ window.addEventListener("scroll", function () {
   if (window.scrollY >= window.innerHeight) {
     headerDiv.className = "content-header";
     titleHeader.textContent = "Projects";
+    headerAnchor.forEach(function (a) {
+      a.className = "content-a";
+    });
   } else if (window.scrollY < window.innerHeight) {
     headerDiv.className = "";
     titleHeader.textContent = "Welcome!";
+    headerAnchor.forEach(function (a) {
+      a.className = "header-a";
+    });
   }
 });
 //# sourceMappingURL=portfolio.js.map

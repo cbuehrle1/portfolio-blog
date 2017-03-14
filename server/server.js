@@ -231,6 +231,8 @@ app.post("/signup", function(req, res, next) {
 
 app.use(require("./api-routes.js")());
 
-app.listen(5000, function() {
+var port = process.env.PORT || 5000;
+
+app.listen(port, function() {
   console.log('listening on port 5000.');
 });

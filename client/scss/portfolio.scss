@@ -319,7 +319,7 @@ footer{
       height: 40px;
       margin: 0 .5%;
       background-image: url("https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png");
-      background-size: cover;
+      background-size: contain;
       background-repeat: no-repeat;
       background-position: top;
     }
@@ -329,7 +329,7 @@ footer{
       height: 42px;
       margin: 0 .5%;
       background-image: url("http://netdna.copyblogger.com/images/linkedin.png");
-      background-size: cover;
+      background-size: contain;
       background-repeat: no-repeat;
     }
   }
@@ -346,19 +346,28 @@ footer{
     }
   }
 }
-@media (max-width: 978px) {
-  footer{
-    .footer-float-right{
-      .github-icon{
-        width: 11%;
-      }
-      .linkedin-icon{
-        width: 11%;
-      }
+@media (max-width: 959px) {
+  .portfolio-container{
+    width: 60%;
+    margin: 0 auto;
+    .port-float-left{
+      float: none;
+      width: 100%;
+      margin: 0 auto 15px auto;
+    }
+    .port-float-right{
+      float: none;
+      width: 100%;
+      margin: 0 auto 15px auto;
     }
   }
 }
 @media (max-width: 891px) {
+  .title-content{
+    h1{
+      font-size: 32px;
+    }
+  }
   footer{
     .footer-float-right{
       .github-icon{
@@ -383,6 +392,52 @@ footer{
   }
 }
 @media (max-width: 760px) {
+  .portfolio-container{
+    font-size: 14px;
+    .port-float-left{
+      .port-shader-left{
+        .port-center-text{
+          .transform-div{
+            a{
+              button{
+                opacity: 1;
+                background-color: white;
+                color: #000;
+              }
+            }
+          }
+        }
+      }
+    }
+    .port-float-right{
+      .port-shader-right{
+        .port-center-text{
+          .transform-div{
+            a{
+              button{
+                opacity: 1;
+                background-color: white;
+                color: #000;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  header{
+    font-size: 12px;
+    ul{
+      li{
+        width: 20%;
+      }
+    }
+  }
+  .about-header{
+    h1{
+      font-size: 16px;
+    }
+  }
   footer{
     .footer-float-right{
       .github-icon{
@@ -419,6 +474,11 @@ footer{
   }
 }
 @media (max-width: 450px) {
+  title-content{
+    h1{
+      font-size: 24px;
+    }
+  }
   footer{
     .footer-float-right{
       .github-icon{

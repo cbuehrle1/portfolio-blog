@@ -163,13 +163,17 @@ app.get("/new", ensureAuthenticated, function (req, res) {
   res.render("new");
 });
 
+app.get("/favicon.ico", function(req, res) {
+  res.sendStatus(202);
+});
+
 app.get("/:postId", function(req, res) {
 
   var indivdualPost;
 
   var cb = function (err, data) {
     if (err) {
-      console.log(err);
+      console.log(req.body)
     }
 
     res.render("blog-post", { post: indivdualPost, recent: data });

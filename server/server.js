@@ -24,8 +24,10 @@ app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 app.use(flash());
 
+var SECRET = process.env.SECRET || "abaegdadg%!#$!#gadg#$#11134%%%$banan!TfT";
+
 app.use(session({
-  secret: "abaegdadg%!#$!#gadg#$#11134%%%$banan!TfT",
+  secret: SECRET,
   resave: true,
   saveUninitialized: true
 }));
@@ -68,7 +70,7 @@ app.get("/login", function(req, res) {
 app.get("/blog", function(req, res) {
 
   var posts = []
-  console.log(req.query)
+
   Post.find(req.query)
     .sort({ createdAt: "descending" })
     .exec(function(err, data) {
@@ -88,6 +90,7 @@ app.get("/blog", function(req, res) {
 
         posts.push(item);
       });
+      console.log(posts);
       res.render('blog', { posts: posts });
     });
 });

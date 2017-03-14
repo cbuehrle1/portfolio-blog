@@ -9,6 +9,7 @@ module.exports = function () {
   router.post("/api/blog/new", function (req, res) {
 
     var cb = (err, data) => {
+      console.log(data);
       res.send(data);
     };
 

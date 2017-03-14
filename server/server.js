@@ -68,7 +68,7 @@ app.get("/login", function(req, res) {
 app.get("/blog", function(req, res) {
 
   var posts = []
-
+  console.log(req.query)
   Post.find(req.query)
     .sort({ createdAt: "descending" })
     .exec(function(err, data) {
@@ -120,7 +120,7 @@ app.get("/blog-admin", ensureAuthenticated, function(req, res) {
 
 app.get("/admin/:postId", ensureAuthenticated, function(req, res) {
   var indivdualPost;
-
+  console.log("why", req.body)
   var cb = function (err, data) {
     if (err) {
       console.log(err);

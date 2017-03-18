@@ -167,7 +167,7 @@ app.get("/favicon.ico", function(req, res) {
   res.sendStatus(202);
 });
 
-app.get("/:postId", function(req, res) {
+app.get("/blog/:postId", function(req, res) {
 
   var indivdualPost;
 

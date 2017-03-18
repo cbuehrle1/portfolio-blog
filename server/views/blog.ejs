@@ -6,7 +6,7 @@
       <div class="ejs-front-page-post">
         <div class="constrain-height">
           <div class="ejs-post-header">
-            <h1><a href="/<%= post.id %>"><%= post.title %></a></h1>
+            <h1><a href="/blog/<%= post.id %>"><%= post.title %></a></h1>
             <h2><%= post.date.toDateString() %></h2>
           </div>
           <div><% post.body.forEach(function(item) { %>
@@ -23,7 +23,7 @@
           <h2>Tag: <%= post.tag %></h2>
           <div class="gradient-add"></div>
         </div>
-        <div class="align-right"><h2><a href="/<%= post.id %>">Read More..</a></h2></div>
+        <div class="align-right"><h2><a href="/blog/<%= post.id %>">Read More..</a></h2></div>
       </div>
     <% }) %>
   </div>

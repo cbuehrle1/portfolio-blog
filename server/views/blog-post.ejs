@@ -4,7 +4,7 @@
     <h1>Most Recent Posts</h1>
       <% recent.forEach(function(post) { %>
         <div class="recent-div-post">
-          <h2><a href="/<%= post._id %>"><%= post.title %></a></h1>
+          <h2><a href="/blog/<%= post._id %>"><%= post.title %></a></h1>
           <h3><%= post.createdAt.toDateString() %></h2>
         </div>
       <% }) %>
@@ -14,7 +14,7 @@
     <div class="ejs-blog-post">
       <div class="ejs-post-header">
         <h1><%= post.title %></h1>
-        <h2><a class="comment-counter" href="/<%= post.id %>#disqus_thread"></a> | <%= post.date.toDateString() %></h2>
+        <h2><a class="comment-counter" href="/blog/<%= post.id %>#disqus_thread"></a> | <%= post.date.toDateString() %></h2>
       </div>
       <div><% post.body.forEach(function(item) { %>
         <% if (item.tag === "h2") { %>
